@@ -1,0 +1,19 @@
+{
+	"recommendations": [
+		"adamwalzer.scss-lint",
+		"aquasecurityofficial.trivy-vulnerability-scanner",
+		"Bridgecrew.checkov",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"exiasr.hadolint",
+		"foxundermoon.shell-format",
+		"HTMLHint.vscode-htmlhint",
+		"jacobcofman.changelog",
+		"monosans.djlint",
+		"oderwat.indent-rainbow",
+		"streetsidesoftware.code-spell-checker",
+		"stylelint.vscode-stylelint",
+		"timonwong.shellcheck",
+		"yzhang.markdown-all-in-one"
+	]
+}

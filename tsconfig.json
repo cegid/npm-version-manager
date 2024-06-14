@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"module": "NodeNext",
+		"target": "ES2020",
+		"outDir": "./dist",
+		"lib": ["ES2020"],
+		"types": ["node"],
+		"allowJs": true,
+		"baseUrl": ".",
+		"declaration": true,
+		"emitDecoratorMetadata": true,
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"resolveJsonModule": true,
+		"strict": true
+	},
+	"include": ["lib"]
+}

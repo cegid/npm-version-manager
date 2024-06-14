@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "🚨 Validate branch name..."
+npx --yes validate-branch-name

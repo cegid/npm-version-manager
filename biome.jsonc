@@ -1,0 +1,188 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"vcs": {
+		"clientKind": "git",
+		"enabled": true,
+		"useIgnoreFile": true
+	},
+	"formatter": {
+		"enabled": true,
+		"attributePosition": "multiline",
+		"formatWithErrors": true,
+		"indentStyle": "tab",
+		"indentWidth": 4,
+		"lineEnding": "lf",
+		"lineWidth": 120,
+		"ignore": [
+			"**/.git",
+			"**/.svn",
+			"**/.hg",
+			"**/node_modules",
+			"**/build",
+			"**/coverage",
+			"**/dist",
+			"**/eslint.json",
+			"**/junit.xml",
+			"**/test-report.xml",
+			"**/tmp",
+			"**/megalinter-reports",
+			"**/*.js",
+			"**/*.jsx",
+			"**/*.ts",
+			"**/*.tsx"
+		]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": false,
+			"complexity": {
+				"noExcessiveCognitiveComplexity": "warn",
+				"noExtraBooleanCast": "error",
+				"noMultipleSpacesInRegularExpressionLiterals": "error",
+				"noUselessCatch": "error",
+				"noUselessLoneBlockStatements": "error",
+				"noUselessTernary": "error",
+				"noVoid": "error",
+				"noWith": "error",
+				"useLiteralKeys": "error",
+				"useRegexLiterals": "error"
+			},
+			"correctness": {
+				"noConstAssign": "error",
+				"noConstantCondition": "error",
+				"noEmptyCharacterClassInRegex": "error",
+				"noEmptyPattern": "error",
+				"noGlobalObjectCalls": "error",
+				"noInnerDeclarations": "error",
+				"noInvalidConstructorSuper": "error",
+				"noInvalidNewBuiltin": "error",
+				"noInvalidUseBeforeDeclaration": "error",
+				"noNewSymbol": "error",
+				"noNonoctalDecimalEscape": "error",
+				"noPrecisionLoss": "error",
+				"noSelfAssign": "error",
+				"noSetterReturn": "error",
+				"noSwitchDeclarations": "error",
+				"noUndeclaredVariables": "error",
+				"noUnreachable": "error",
+				"noUnreachableSuper": "error",
+				"noUnsafeFinally": "error",
+				"noUnsafeOptionalChaining": "error",
+				"noUnusedLabels": "error",
+				"noUnusedPrivateClassMembers": "error",
+				"noUnusedVariables": "error",
+				"useArrayLiterals": "error",
+				"useIsNan": "error",
+				"useValidForDirection": "error",
+				"useYield": "error"
+			},
+			"nursery": {
+				"noDuplicateElseIf": "error",
+				"noUselessStringConcat": "error",
+				"noUselessUndefinedInitialization": "error",
+				"noYodaExpression": "error",
+				"useConsistentBuiltinInstantiation": "error",
+				"useDefaultSwitchClause": "off",
+				"useThrowOnlyError": "error"
+			},
+			"security": {
+				"noGlobalEval": "error"
+			},
+			"style": {
+				"noCommaOperator": "error",
+				"noParameterAssign": "error",
+				"noVar": "error",
+				"useBlockStatements": "error",
+				"useCollapsedElseIf": "error",
+				"useConst": "error",
+				"useShorthandAssign": "error",
+				"useSingleVarDeclarator": "off",
+				"useTemplate": "error",
+				"useWhile": "error"
+			},
+			"suspicious": {
+				"noAssignInExpressions": "error",
+				"noAsyncPromiseExecutor": "error",
+				"noCatchAssign": "error",
+				"noClassAssign": "error",
+				"noCompareNegZero": "error",
+				"noConfusingLabels": "error",
+				"noConsoleLog": "warn",
+				"noControlCharactersInRegex": "error",
+				"noDebugger": "error",
+				"noDoubleEquals": "warn",
+				"noDuplicateCase": "error",
+				"noDuplicateClassMembers": "error",
+				"noDuplicateObjectKeys": "error",
+				"noDuplicateParameters": "error",
+				"noEmptyBlockStatements": "error",
+				"noFallthroughSwitchClause": "error",
+				"noFunctionAssign": "error",
+				"noGlobalAssign": "error",
+				"noImportAssign": "error",
+				"noLabelVar": "error",
+				"noMisleadingCharacterClass": "error",
+				"noPrototypeBuiltins": "error",
+				"noRedeclare": "error",
+				"noSelfCompare": "error",
+				"noShadowRestrictedNames": "error",
+				"noUnsafeNegation": "error",
+				"useGetterReturn": "error",
+				"useValidTypeof": "error"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"enabled": true,
+			"quoteStyle": "double",
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"trailingCommas": "es5",
+			"semicolons": "always",
+			"arrowParentheses": "always",
+			"bracketSameLine": false,
+			"bracketSpacing": false
+		}
+	},
+	"overrides": [
+		{
+			"include": ["*.json", "*.jsonc", "*.json5"],
+			"javascript": {
+				"formatter": {
+					"trailingCommas": "none"
+				}
+			}
+		},
+		{
+			"include": ["*.ts", "*.tsx"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noInvalidUseBeforeDeclaration": "off"
+					}
+				}
+			}
+		},
+		{
+			"include": ["*.md"],
+			"formatter": {
+				"indentStyle": "space",
+				"indentWidth": 3
+			}
+		},
+		{
+			"include": ["*.sh", "*.yml", "*.yaml"],
+			"javascript": {
+				"formatter": {
+					"quoteStyle": "single"
+				}
+			},
+			"formatter": {
+				"indentStyle": "space",
+				"indentWidth": 2
+			}
+		}
+	]
+}

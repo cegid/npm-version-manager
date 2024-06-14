@@ -1,0 +1,62 @@
+{
+	"name": "@cegid/npm-version-manager",
+	"version": "1.0.0",
+	"description": "Version manager for NPM packages",
+	"main": "dist/CLI.js",
+	"files": ["dist"],
+	"directories": {
+		"lib": "lib",
+		"test": "test"
+	},
+	"scripts": {
+		"clean": "rm -rf ./coverage ./dist ./megalinter-reports ./eslint.json ./junit.xml ./test-report.xml",
+		"build": "rm -rf ./dist && npm run generate-version && tsc",
+		"generate-version": "jq -n --tab --arg name $npm_package_name --arg version $npm_package_version '{name: $name, version: $version}' > lib/version.json",
+		"format": "biome format --write",
+		"lint": "biome lint --write",
+		"mega-linter": "rm -rf ./megalinter-reports && npx -y mega-linter-runner@7.12.0 --release v7.12.0 --flavor javascript --remove-container",
+		"prepare": "bash scripts/prepare.sh",
+		"test": "vitest --config vitest.config.ts",
+		"test-ci": "vitest run --coverage --config vitest.config.ts",
+		"update-dependencies": "npx -y npm-check-updates -i"
+	},
+	"bin": {
+		"cegid-npm-version-manager": "dist/CLI.js"
+	},
+	"publishConfig": {
+		"registry": "https://cegid.jfrog.io/cegid/api/npm/loop-npm-staging/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:cegid/npm-version-manager.git"
+	},
+	"keywords": ["Cegid", "Library", "NPM", "Manager", "Bump", "Version"],
+	"author": "Cegid ©",
+	"license": "SEE LICENSE IN LICENSE",
+	"dependencies": {
+		"cli-color": "^2.0.4",
+		"uuid": "^10.0.0",
+		"yargs": "^17.7.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.1",
+		"@cspell/dict-fr-fr": "^2.2.2",
+		"@types/bun": "^1.1.4",
+		"@types/cli-color": "^2.0.6",
+		"@types/node": "^20.14.2",
+		"@types/uuid": "^9.0.8",
+		"@types/yargs": "^17.0.32",
+		"@vitest/coverage-v8": "^1.6.0",
+		"husky": "^9.0.11",
+		"typescript": "^5.4.5",
+		"vitest": "^1.6.0",
+		"vitest-sonar-reporter": "^2.0.0"
+	},
+	"lint-staged": {
+		"**/{.*,*}": ["biome format --write", "biome lint --write"]
+	},
+	"validate-branch-name": {
+		"pattern": "^(master)$|^(feature|bugfix|hotfix)/.+$",
+		"errorMsg": "🤨 The branch you try to push does not respect our conventions, you can rename it with `git branch -m <current-name> <new-name>`"
+	}
+}

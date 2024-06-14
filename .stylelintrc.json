@@ -1,0 +1,14 @@
+{
+	"extends": "stylelint-config-standard",
+	"reportDescriptionlessDisables": true,
+	"reportInvalidScopeDisables": true,
+	"reportNeedlessDisables": true,
+	"rules": {
+		"at-rule-no-vendor-prefix": false,
+		"color-hex-length": "long",
+		"media-feature-name-no-vendor-prefix": false,
+		"property-no-vendor-prefix": false,
+		"selector-no-vendor-prefix": false,
+		"value-no-vendor-prefix": false
+	}
+}

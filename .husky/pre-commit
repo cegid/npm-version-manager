@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "🧪 Run Biome..."
+npx --yes lint-staged -v || exit 0

@@ -1,0 +1,125 @@
+{
+	"version": "0.2",
+	"language": "en-GB,en-US,fr-FR",
+	"import": ["./node_modules/@cspell/dict-fr-fr/cspell-ext.json"],
+	"caseSensitive": false,
+	"languageSettings": [
+		{
+			"languageId": "*",
+			"locale": "fr-FR",
+			"caseSensitive": false
+		}
+	],
+	"ignorePaths": [
+		"**/.git/**",
+		"**/.vscode/**",
+		"**/build/**",
+		"**/dist/**",
+		"**/megalinter-reports/**",
+		"**/node_modules/**",
+		"**/vscode-extension/**",
+		"**/package-lock.json",
+		".*"
+	],
+	"ignoreRegExpList": [
+		"azure-account-storage",
+		"azure-key-vaults",
+		"azure-managed-identity",
+		"azure-network",
+		"azure-resource-group",
+		"azure-server",
+		"data-image-base64",
+		"database-name-ypn",
+		"database-name",
+		"email",
+		"jwt-token",
+		"kafka-broker",
+		"kafka-cluster",
+		"kafka-environment",
+		"sql-sp-functions",
+		"uuid",
+		"uuid-non-hexadecimal"
+	],
+	"patterns": [
+		{
+			"name": "azure-account-storage",
+			"pattern": "/dat830700.+/g"
+		},
+		{
+			"name": "azure-key-vaults",
+			"pattern": "/SEC8307.+/g"
+		},
+		{
+			"name": "azure-managed-identity",
+			"pattern": "/ID8307.+/g"
+		},
+		{
+			"name": "azure-network",
+			"pattern": "/NET830700.+/g"
+		},
+		{
+			"name": "azure-resource-group",
+			"pattern": "/RSG83070.+/g"
+		},
+		{
+			"name": "azure-server",
+			"pattern": "/S8307.+/g"
+		},
+		{
+			"name": "data-image-base64",
+			"pattern": "/data:image/[^;]+;base64,.+/g"
+		},
+		{
+			"name": "database-name-ypn",
+			"pattern": "/YPN_DB[A-Za-z0-9]+/g"
+		},
+		{
+			"name": "database-name",
+			"pattern": "/DB[A-Za-z0-9]+/g"
+		},
+		{
+			"name": "email",
+			"pattern": "/[\\w\\._-]+@[\\w\\._-]+\\.[a-z]{2,4}/g"
+		},
+		{
+			"name": "jwt-token",
+			"pattern": "/eyJ[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+/g"
+		},
+		{
+			"name": "kafka-broker",
+			"pattern": "/.+\\.francecentral\\.azure\\.confluent\\.cloud/g"
+		},
+		{
+			"name": "kafka-cluster",
+			"pattern": "/lkc-[A-Za-z0-9]{5}/g"
+		},
+		{
+			"name": "kafka-environment",
+			"pattern": "/env-[A-Za-z0-9]{5}/g"
+		},
+		{
+			"name": "sql-sp-functions",
+			"pattern": "/sp_[\\w_]/g"
+		},
+		{
+			"name": "uuid",
+			"pattern": "/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/g"
+		},
+		{
+			"name": "uuid-non-hexadecimal",
+			"pattern": "/[0-9a-zA-Z]{8}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{4}-[0-9a-zA-Z]{12}/g"
+		}
+	],
+	"words": [
+		"biomejs",
+		"Cegid",
+		"cegid",
+		"classname",
+		"cobertura",
+		"gitmoji",
+		"preid",
+		"premajor",
+		"preminor",
+		"prepatch"
+	]
+}

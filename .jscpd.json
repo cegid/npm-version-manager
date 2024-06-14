@@ -1,0 +1,24 @@
+{
+	"threshold": 10,
+	"reporters": ["html", "markdown"],
+	"absolute": true,
+	"gitignore": true,
+	"ignore": [
+		"**/node_modules/**",
+		"node_modules/**",
+		"**/.git/**",
+		"**/.rbenv/**",
+		"**/.venv'/**",
+		"**/coverage/**",
+		"**/dist/**",
+		"**/test/**",
+		"**/megalinter-reports/**",
+		"**/*cache*/**",
+		"**/*.html",
+		"**/*.json",
+		"**/*.md",
+		"**/*.xml",
+		"**/*.yaml",
+		"**/*.yml"
+	]
+}

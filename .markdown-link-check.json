@@ -1,0 +1,14 @@
+{
+	"retryOn429": true,
+	"retryCount": 5,
+	"ignorePatterns": [
+		{
+			"pattern": "^https://dev.azure.com/*",
+			"reason": "Need to be authenticated for checking the url"
+		},
+		{
+			"pattern": "^https://cegid.visualstudio.com/*",
+			"reason": "Need to be authenticated for checking the url"
+		}
+	]
+}
